@@ -131,8 +131,7 @@ char mines_in_proximity_finder(grid_t grid, int i, int j)
     return mines_in_proximity_char;
 }
 
-//Tests every tile (except for edges) for mines and assigns the number of mines around the selected tile 
-//to the selected tile
+//Tests every tile (except for edges) for mines and assigns the number of mines around the selected tile to the selected tile
 void find_mines(grid_t &grid, int grid_size)
 {
     int mines_in_proximity {};
@@ -149,6 +148,7 @@ void find_mines(grid_t &grid, int grid_size)
     }
 }
 
+//Trims edges of the grid to account for the fact that the find_mines() function won't inspect edge tiles
 void trim_grid(grid_t &grid, int grid_size)
 {
     int column_to_delete = grid_size - 1;
